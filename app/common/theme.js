@@ -1,3 +1,7 @@
+/**
+ * 通用主题配置项
+ */
+
 import { Dimensions, PixelRatio, StyleSheet } from "react-native";
 
 let window = {
@@ -17,10 +21,12 @@ const themeStyles = StyleSheet.create({
     
 });
 
-module.exports = {
+
+export {
   window,
-  Colors,
-  themeStyles,
   A,
-  a
+  a,
+  Colors,
+  themeStyles
 };
+

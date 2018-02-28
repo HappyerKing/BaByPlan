@@ -1,4 +1,5 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import { AppRegistry } from "react-native";
+import { Root } from "./app/page";
+import App from "./App";
 
-AppRegistry.registerComponent('BaByPlan', () => App);
+AppRegistry.registerComponent("BaByPlan", () => Root);
