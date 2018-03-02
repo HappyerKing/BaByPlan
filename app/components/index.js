@@ -1,3 +1,5 @@
-import Kohana from './Kohana';
+import Kohana from "./Kohana";
+import Loading from "./Loading";
+import TopBar from "./TopBar";
 
-export {Kohana};
+export { Kohana, Loading, TopBar };

@@ -7,16 +7,14 @@ import { View, StatusBar, Platform, StyleSheet } from "react-native";
 import { StackNavigator } from "react-navigation";
 
 import { userStore } from "../data/mobx";
-import { Home } from "./My";
+import { MyHome } from "./My";
 import Login from './Login';
 import Main from './Main';
-
 
 const Route = StackNavigator(
   {
     Login: { screen: Login },
     Main: { screen: Main },
-    Home: { screen: Home },
   },
   {
     initialRouteName: userStore.user != null ?"Main":"Login", // 默认显示界面

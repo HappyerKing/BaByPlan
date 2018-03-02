@@ -7,7 +7,7 @@ class user {
         console.log('user init');
     }
 
-    user = null;
+    user = {};
     
 }
 
