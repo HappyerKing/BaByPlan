@@ -8,16 +8,18 @@ import { StackNavigator } from "react-navigation";
 
 import { userStore } from "../data/mobx";
 import { MyHome } from "./My";
-import Login from './Login';
-import Main from './Main';
+import { DiaryEdit } from "./BabyDiary";
+import Login from "./Login";
+import Main from "./Main";
 
 const Route = StackNavigator(
   {
     Login: { screen: Login },
     Main: { screen: Main },
+    DiaryEdit: { screen: DiaryEdit }
   },
   {
-    initialRouteName: userStore.user != null ?"Main":"Login", // 默认显示界面
+    initialRouteName: userStore.user != null ? "Main" : "Login", // 默认显示界面
     swipeEnabled: false,
     navigationOptions: {
       gesturesEnabled: false
@@ -28,17 +30,16 @@ const Route = StackNavigator(
 );
 
 export default class Root extends Component {
-  render(){
-    return( 
+  render() {
+    return (
       <View style={{ flex: 1 }}>
         <View style={style.statusBar}>
           <StatusBar backgroundColor="black" barStyle="light-content" />
         </View>
         <Route />
       </View>
-    )
+    );
   }
-  
 }
 
 const style = StyleSheet.create({

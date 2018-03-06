@@ -1,4 +1,7 @@
 import DateManager from "./DateManager";
-import theme from "./theme";
+import Device from "./Device";
+import RealmManager from "./RealmManager";
+import DiaryManager from './DiaryManager';
+import PhotoManager from './PhotoManeger';
 
-export { DateManager, theme };
+export { DateManager, Device, RealmManager ,DiaryManager,PhotoManager};

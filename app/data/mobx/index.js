@@ -1,3 +1,4 @@
 import userStore from "./userStore";
+import DiaryData from "./DiaryData";
 
-export { userStore };
+export { userStore, DiaryData };
