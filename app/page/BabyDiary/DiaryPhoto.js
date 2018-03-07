@@ -13,11 +13,12 @@ import {
   Platform,
   LayoutAnimation,
   ScrollView,
-  Switch
+  Switch,
+  NativeModules
 } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';  
 // 控件
-import {Navigation,HUD,AutoExpandingTextInput,PhotoManager, PhotoCell,CameraCell} from "../../components"
+import {Navigation,HUD,AutoExpandingTextInput, PhotoCell,CameraCell} from "../../components"
 import ImgToBase64 from 'react-native-image-base64';
 import { window,themeColor,toastconfig} from '../../common/theme';
 import {PhotoManager} from '../../common'
@@ -26,7 +27,7 @@ import Toast from "react-native-root-toast";
 const StreamColor = themeColor.StreamColor;
 const ScreenWidth = window.width;
 
-var ReadImageData = require('NativeModules').ReadImageData;
+//var ReadImageData = require('NativeModules').ReadImageData;
 var CustomLayoutAnimation = {
   duration: 200,
     create: {
@@ -86,10 +87,21 @@ class DiaryPhoto extends Component {
       let asset = this.state.assets[i];
       // 不是base64
       if (asset.item.node.image.uri.indexOf("assets-library") != -1) {
-        ReadImageData.readImage(asset.item.node.image.uri, "0.1", (imageBase64) => {
-          let str = "data:image/jpeg;base64," + imageBase64;
+        NativeModules.RNImageToBase64.getBase64String(asset.item.node.image.uri, (err, base64) => {
+          let str = "data:image/jpeg;base64," + base64;
           this.turnBase64Icons(i + 1, [...arr, str], block);
-        });
+        })
+        // ImgToBase64.getBase64String(asset.item.node.image.uri)
+        //     .then(imageBase64 => {
+        //       console.log(imageBase64);
+        //       let str = "data:image/jpeg;base64," + imageBase64;
+        //       this.turnBase64Icons(i + 1, [...arr, str], block);
+        //     }).catch(err => console.log(err));
+    
+        // ReadImageData.readImage(asset.item.node.image.uri, "0.1", (imageBase64) => {
+        //   let str = "data:image/jpeg;base64," + imageBase64;
+        //   this.turnBase64Icons(i + 1, [...arr, str], block);
+        // });
       } 
       // 是base64
       else {
@@ -297,7 +309,7 @@ class DiaryPhoto extends Component {
         onMomentumScrollEnd = {this._contentViewScroll}
       >
         <View style={styles.subview}>
-          {/* {this.camera()} */}
+          {this.camera()}
           {this.cameraView()}
           {this.photoView()}
         </View>

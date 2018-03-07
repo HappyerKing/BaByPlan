@@ -38,7 +38,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>App需要访问相机</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>App需要访问相机</string>
 	<key>NSPhotoLibraryUsageDescription</key>

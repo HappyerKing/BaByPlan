@@ -52,11 +52,12 @@ export default class DiaryHome extends Component {
   _onPositive = i => {
     InteractionManager.runAfterInteractions(() => {
       const { navigate } = this.props.navigation;
-      navigate("List", {
+      navigate("DiaryList", {
         name: DateManager.getMonthEnglish(i) + "/" + this.state.currentYear,
         year: this.state.currentYear,
         month: i + 1,
-        day: DateManager.getDay()
+        day: DateManager.getDay(),
+        dateDiarys:this.diaryData.data
       });
     });
   };
@@ -120,10 +121,13 @@ export default class DiaryHome extends Component {
   pushDiary(year, month, day) {
     InteractionManager.runAfterInteractions(() => {
       const { navigate } = this.props.navigation;
-      navigate("Diary", {
+      navigate("DiaryDetail", {
         year: year,
         month: month,
-        day: day
+        day: day,
+        callback:()=>{
+          this.diaryData.refresh();
+        }
       });
     });
   }

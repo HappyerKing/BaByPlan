@@ -8,7 +8,7 @@ import { StackNavigator } from "react-navigation";
 
 import { userStore } from "../data/mobx";
 import { MyHome } from "./My";
-import { DiaryEdit } from "./BabyDiary";
+import { DiaryEdit ,DiaryPhoto,DiaryDetail,DiaryList} from "./BabyDiary";
 import Login from "./Login";
 import Main from "./Main";
 
@@ -16,7 +16,10 @@ const Route = StackNavigator(
   {
     Login: { screen: Login },
     Main: { screen: Main },
-    DiaryEdit: { screen: DiaryEdit }
+    DiaryEdit: { screen: DiaryEdit },
+    DiaryPhoto: { screen: DiaryPhoto },
+    DiaryDetail:{screen:DiaryDetail},
+    DiaryList:{screen:DiaryList}
   },
   {
     initialRouteName: userStore.user != null ? "Main" : "Login", // 默认显示界面

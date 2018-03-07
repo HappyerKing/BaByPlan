@@ -11,6 +11,7 @@ import KeyboardAccess from './KeyboardAccess';
 import Navigation from './Navigation';
 import PhotoCell from './PhotoCell';
 import CameraCell from './CameraCell';
+import ListCell from './ListCell';
 
 export {
   Kohana,
@@ -26,5 +27,6 @@ export {
   KeyboardAccess,
   Navigation,
   PhotoCell,
-  CameraCell
+  CameraCell,
+  ListCell
 };

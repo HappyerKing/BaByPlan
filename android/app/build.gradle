@@ -137,6 +137,12 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-image-to-base64')
+    compile project(':realm')
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-interactable')
+    compile project(':react-native-image-crop-picker')
+    compile project(':react-native-image-base64')
     compile project(':react-native-image-base64')
     compile project(':react-native-image-crop-picker')
     compile project(':realm')

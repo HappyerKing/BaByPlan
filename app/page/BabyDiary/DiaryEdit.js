@@ -27,7 +27,8 @@ import {
   KeyboardAccess,
   Navigation
 } from "../../components";
-import { NAVIGATION_HEIGHT ,window,themeColor} from "../../common/theme";
+import { NAVIGATION_HEIGHT ,window,themeColor, toastconfig} from "../../common/theme";
+import Toast from "react-native-root-toast";
 
 const ScreenWidth = window.width;
 const ScreenHeight =window.height;
@@ -134,6 +135,14 @@ class DiaryEdit extends Component {
   };
   // 保存
   _save = () => {
+    if(this.state.name === undefined ||this.state.name ===""){
+      Toast.show('请填写标题',toastconfig);
+      return;
+    }
+    if(this.refs.content.getContent() === undefined ||this.refs.content.getContent() ===""){
+      Toast.show('请填写内容',toastconfig);
+      return;
+    } 
     const { params } = this.props.navigation.state;
     const { goBack } = this.props.navigation;
     const { DiaryAction } = this.props;
@@ -225,7 +234,7 @@ class DiaryEdit extends Component {
   _onAddPress = () => {
     InteractionManager.runAfterInteractions(() => {
       const { navigate } = this.props.navigation;
-      navigate("Photo", {
+      navigate("DiaryPhoto", {
         callback: data => {
           this.setState({
             assets: data

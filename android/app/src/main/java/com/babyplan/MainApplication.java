@@ -3,6 +3,12 @@ package com.babyplan;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
+import io.realm.react.RealmReactPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.wix.interactable.Interactable;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import com.reactlibrary.RNImgToBase64Package;
 import com.reactlibrary.RNImgToBase64Package;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import io.realm.react.RealmReactPackage;
@@ -33,6 +39,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ImageToBase64Package(),
+            new RealmReactPackage(),
+            new VectorIconsPackage(),
+            new Interactable(),
+            new PickerPackage(),
+            new RNImgToBase64Package(),
             new RNImgToBase64Package(),
             new PickerPackage(),
             new RealmReactPackage(),
