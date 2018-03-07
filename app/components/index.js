@@ -9,6 +9,8 @@ import AutoExpandingTextInput from "./AutoExpandingTextInput";
 import Swipe from "./Swipe";
 import KeyboardAccess from './KeyboardAccess';
 import Navigation from './Navigation';
+import PhotoCell from './PhotoCell';
+import CameraCell from './CameraCell';
 
 export {
   Kohana,
@@ -22,5 +24,7 @@ export {
   AutoExpandingTextInput,
   Swipe,
   KeyboardAccess,
-  Navigation
+  Navigation,
+  PhotoCell,
+  CameraCell
 };

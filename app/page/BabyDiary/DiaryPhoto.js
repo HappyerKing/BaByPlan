@@ -15,15 +15,12 @@ import {
   ScrollView,
   Switch
 } from 'react-native';
-// Redux
 import ImagePicker from 'react-native-image-crop-picker';  
 // 控件
-import PhotoCell from './PhotoCell';
-import CameraCell from './CameraCell';
-import {Navigation,HUD,AutoExpandingTextInput,PhotoManager,Toast} from "../../components"
-// action
+import {Navigation,HUD,AutoExpandingTextInput,PhotoManager, PhotoCell,CameraCell} from "../../components"
 import ImgToBase64 from 'react-native-image-base64';
 import { window,themeColor,toastconfig} from '../../common/theme';
+import {PhotoManager} from '../../common'
 import Toast from "react-native-root-toast";
 
 const StreamColor = themeColor.StreamColor;
@@ -109,7 +106,8 @@ class DiaryPhoto extends Component {
   }
   // 保存
   _save=()=>{
-    this.refs.toast2.show(1000);
+    Toast.show('正在转码, 请稍后',toastconfig);
+    //this.refs.toast2.show(1000);
     let arr = this.turnBase64Icons(0, [], (arr)=>{
       const {goBack, state} = this.props.navigation;
       state.params.callback(arr);
@@ -121,7 +119,8 @@ class DiaryPhoto extends Component {
     item.item.isBase64 = false;
     // 超过9张
     if (this.state.assets.length >= 9 && isSelect == false) {
-      this.refs.toast.show(1000);
+      //this.refs.toast.show(1000);
+      Toast.show('抱歉哦, 最多9张图片啦',toastconfig);
     }
     // 少于9张
     else {
@@ -279,17 +278,17 @@ class DiaryPhoto extends Component {
     return arr;
   }
   // 提示
-  toast=()=>{
-    return (
-      <Toast ref={"toast"} text={"抱歉哦, 最多9张图片啦"}/>
-    )
-  }
+//   toast=()=>{
+//     return (
+//       <Toast ref={"toast"} text={"抱歉哦, 最多9张图片啦"}/>
+//     )
+//   }
   // 提示
-  toast2=()=>{
-    return (
-      <Toast ref={"toast2"} text={"正在转码, 请稍后"}/>
-    )
-  }
+//   toast2=()=>{
+//     return (
+//       <Toast ref={"toast2"} text={"正在转码, 请稍后"}/>
+//     )
+//   }
   // 滚动视图
   scroll=()=>{
     return (
@@ -310,8 +309,8 @@ class DiaryPhoto extends Component {
       <View style={styles.container}>
         {this.nav()}
         {this.scroll()}
-        {this.toast()}
-        {this.toast2()}
+        {/* {this.toast()}
+        {this.toast2()} */}
       </View>
     );
   }
