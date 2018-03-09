@@ -3,6 +3,7 @@ package com.babyplan;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.beefe.picker.PickerViewPackage;
 import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
 import io.realm.react.RealmReactPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -39,6 +40,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new PickerViewPackage(),
             new ImageToBase64Package(),
             new RealmReactPackage(),
             new VectorIconsPackage(),

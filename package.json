@@ -17,6 +17,7 @@
     "react-native-image-crop-picker": "^0.20.0",
     "react-native-image-to-base64": "^0.1.0",
     "react-native-interactable": "^0.1.10",
+    "react-native-picker": "^4.3.5",
     "react-native-root-toast": "^3.0.1",
     "react-native-swipe-list-view": "^1.0.6",
     "react-native-swiper": "^1.5.13",

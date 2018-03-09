@@ -3941,6 +3941,10 @@ react-native-interactable@^0.1.10:
   version "0.1.10"
   resolved "http://registry.npm.taobao.org/react-native-interactable/download/react-native-interactable-0.1.10.tgz#65b9a68f6a84ba1c0e2ad5478b1f22ffb29c0526"
 
+react-native-picker@^4.3.5:
+  version "4.3.5"
+  resolved "http://registry.npm.taobao.org/react-native-picker/download/react-native-picker-4.3.5.tgz#bf791dde6908028a11aacb3fdc7c6b2bdb2cd3f3"
+
 react-native-root-siblings@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/react-native-root-siblings/download/react-native-root-siblings-3.0.0.tgz#049f584f83ec5c18f16c5cfe1ef9aada26f685bf"

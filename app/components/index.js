@@ -12,6 +12,7 @@ import Navigation from './Navigation';
 import PhotoCell from './PhotoCell';
 import CameraCell from './CameraCell';
 import ListCell from './ListCell';
+import ThirdPicker from './Picker'
 
 export {
   Kohana,
@@ -28,5 +29,6 @@ export {
   Navigation,
   PhotoCell,
   CameraCell,
-  ListCell
+  ListCell,
+  ThirdPicker
 };
