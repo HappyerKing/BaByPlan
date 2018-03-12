@@ -147,6 +147,81 @@ export default class DateManager {
         var d = new Date(year, month, 0);
         return d.getDate();
     }
+    // 比较两个日期
+    static compareTo(date1, date2, compare_enum) {
+        if (date1.year > date2.year) {
+            if (compare_enum == COMPARE_ENUM.MORE) {
+                return date1;
+            }
+            return date2;
+        }
+        else if (date1.year < date2.year) {
+            if (compare_enum == COMPARE_ENUM.MORE) {
+                return date2;
+            }
+            return date1;
+        }
+        else if (date1.year == date2.year) {
+            if (date1.week > date2.week) {
+                if (compare_enum == COMPARE_ENUM.MORE) {
+                    return date1;
+                }
+                return date2;
+            }
+            else if (date1.week < date2.week) {
+                if (compare_enum == COMPARE_ENUM.MORE) {
+                    return date2;
+                }
+                return date1;
+            }
+        }
+        return date1;
+    }
+
+    static contains(array, item) {
+        for (let i=0; i<array.length; i++) {
+            if (array[i] == item) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+      // 从日期1到日期2之间时间
+      static getDateRange(date1, date2, date_enum) {
+        let dateArr = [];
+        for (let i=date1.year; i<=date2.year; i++) {
+            if (date_enum == DATE_ENUM.YEAR) {
+                dateArr.push({
+                    year: i,
+                    remark: ArrayUtils.getRemarkWithDate({year: i}, DATE_ENUM.YEAR)
+                })
+            } 
+            else if (date_enum == DATE_ENUM.MONTH) {
+                var maxMonth = i == date2.year ? date2.month : 12;
+                var minMonth = i == date1.year ? date1.month : 1;
+                for (let y=minMonth; y<=maxMonth; y++) {
+                    dateArr.push({
+                        year: i,
+                        month: y,
+                        remark: ArrayUtils.getRemarkWithDate({year: i, month: y}, DATE_ENUM.MONTH)
+                    })
+                }
+            } 
+            else if (date_enum == DATE_ENUM.WEEK) {
+                var maxWeek = i == date2.year ? date2.week : 52;
+                var minWeek = i == date1.year ? date1.week : 1;
+                for (let y=minWeek; y<=maxWeek; y++) {
+                    dateArr.push({
+                        year: i,
+                        week: y,
+                        remark: ArrayUtils.getRemarkWithDate({year: i, week: y}, DATE_ENUM.WEEK)
+                    })
+                }
+            }
+        }
+        return dateArr;
+    }
   
   };
 
@@ -156,4 +231,10 @@ export const DATE_ENUM = {
     MONTH: 1,  // 月
     WEEK: 2,   // 周
     DAY: 3,    // 日
+};
+
+// 比较
+export const COMPARE_ENUM = {
+    MORE: 0,  // 大于
+    LESS: 1,  // 小于
 };

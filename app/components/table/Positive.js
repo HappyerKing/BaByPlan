@@ -115,7 +115,7 @@ class Positive extends PureComponent {
               <Image
                 style={styles.icon}
                 resizeMode={"contain"}
-                source={require("../../resouce/images/icon_option.png")}
+                source={require("../../resource/images/icon_option.png")}
               />
             }
             onPress={this._onColor}

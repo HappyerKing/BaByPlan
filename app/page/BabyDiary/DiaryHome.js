@@ -159,7 +159,7 @@ export default class DiaryHome extends Component {
             <Image
               style={styles.icon}
               resizeMode={"contain"}
-              source={require("../../resouce/images/icon_arrow_down.png")}
+              source={require("../../resource/images/icon_arrow_down.png")}
             />
           </View>
         </TouchableOpacity>

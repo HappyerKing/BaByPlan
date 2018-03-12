@@ -18,7 +18,7 @@ class WeatherCell extends PureComponent {
   next() {
     if (this.props.item.isSelect == true) {
       return (
-        <Image style={styles.next} source={require('../../resouce/images/weather_check.png')}/>
+        <Image style={styles.next} source={require('../../resource/images/weather_check.png')}/>
       )
     }
   }

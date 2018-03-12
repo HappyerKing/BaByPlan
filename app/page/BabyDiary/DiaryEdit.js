@@ -51,11 +51,11 @@ class DiaryEdit extends Component {
       keyboardY: new Animated.Value(0),
       titleTop: 0,
       icon: [
-        require("../../resouce/images/weather_sunny_small.png"),
-        require("../../resouce/images/weather_cloud_small.png"),
-        require("../../resouce/images/weather_rain_small.png"),
-        require("../../resouce/images/weather_snow_small.png"),
-        require("../../resouce/images/weather_light_small.png")
+        require("../../resource/images/weather_sunny_small.png"),
+        require("../../resource/images/weather_cloud_small.png"),
+        require("../../resource/images/weather_rain_small.png"),
+        require("../../resource/images/weather_snow_small.png"),
+        require("../../resource/images/weather_light_small.png")
       ],
       currentWeatherIndex: 0,
       keyboardH: 0,
@@ -259,7 +259,7 @@ class DiaryEdit extends Component {
     return (
       <Navigation
         style={styles.nav}
-        leftIcon={require('../../resouce/images/icon_back_arrow.png')}
+        leftIcon={require('../../resource/images/icon_back_arrow.png')}
         leftClick={this._back}
         rightText={"存储"}
         rightClick={this._save}

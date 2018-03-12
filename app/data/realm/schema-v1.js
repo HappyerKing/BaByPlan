@@ -17,10 +17,26 @@ const Diary ={
   }
 }
 
+const Growth = {
+  name: "Growth",
+  primaryKey: 'id',    
+  properties: {
+    id:  { type: "string", indexed: true },
+    sectionId: {type: 'int', default: 0},
+    name:   {type: 'string', default: ''},
+    remark: {type: 'string', default: ''},
+    year:   {type: 'int', default: 0},
+    month:  {type: 'int', default: 0},
+    week:   {type: 'int', default: 0},
+    day:    {type: 'int', default: 0},
+    detail:   {type: 'string', default: ""},
+  }
+};
+
 module.exports = {
   schema: [
-    Diary,
+    Diary,Growth
   ],
-  schemaVersion: 1,
+  schemaVersion: 3,
   migration: () => {}
 };

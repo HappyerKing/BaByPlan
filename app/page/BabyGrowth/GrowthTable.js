@@ -1,15 +1,19 @@
 // Default
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Platform, StyleSheet, Text, View, Image, ScrollView, SectionList, FlatList, TouchableOpacity } from 'react-native';
+import {  StyleSheet, Text, View, Image, ScrollView, SectionList } from 'react-native';
 // Common
-import { Line } from '../../common/index';
+import { Line } from '../../components';
 // Utils
-import Cell from './Cell';
-import { ScreenWidth, ScreenHeight, StreamColor } from '../../utils/index';
-import { BackDefaultColor, TitleColor } from '../../utils/UIUtils';
+import Cell from './GrowthTableCell';
+import { window, themeColor } from '../../common/theme';
 
-class Table extends Component {
+const ScreenWidth = window.width;
+const ScreenHeight = window.height;
+const BackDefaultColor =themeColor.BackDefaultColor;
+const TitleColor =themeColor.TitleColor;
+
+class GrowthTable extends Component {
 
   scrollWithPage(page) {
     this.refs.scroll.scrollTo({x: 0, y: page * (ScreenHeight - 64 - 54 - 50), animated: false})
@@ -50,12 +54,12 @@ class Table extends Component {
           data.push(dict)
         }
         let detail = '';
-        if (param[key].data[keys[i]].inmax != 0) {
-          detail = detail + '支出:  ' + param[key].data[keys[i]].inmax;
-        }
-        if (param[key].data[keys[i]].exmax != 0) {
-          detail = detail + '   ' + '收入:  ' + param[key].data[keys[i]].exmax;
-        }
+        // if (param[key].data[keys[i]].inmax != 0) {
+        //   detail = detail + '支出:  ' + param[key].data[keys[i]].inmax;
+        // }
+        // if (param[key].data[keys[i]].exmax != 0) {
+        //   detail = detail + '   ' + '收入:  ' + param[key].data[keys[i]].exmax;
+        // }
         section.push({
           data: data, 
           remark: param[key].data[keys[i]].remark,
@@ -113,7 +117,7 @@ class NoData extends Component {
       <View style={styles.noData}>
         <Image 
           style={styles.icon} 
-          source={require('../../assets/images/no_data.png')}
+          source={require('../../resource/images/no_data.png')}
         />
         <Text style={styles.name}>暂无数据</Text>
       </View>
@@ -161,13 +165,13 @@ const styles = StyleSheet.create({
 });
 
 
-Table.defaultProps = {
+GrowthTable.defaultProps = {
   onMomentumScrollEnd: ()=>{},
   onPress: ()=>{},
 }
-Table.propTypes = {
+GrowthTable.propTypes = {
   onMomentumScrollEnd: PropTypes.func,
   onPress: PropTypes.func,
 }
 
-export default Table;
+export default GrowthTable;

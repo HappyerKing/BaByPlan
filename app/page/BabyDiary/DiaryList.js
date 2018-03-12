@@ -128,7 +128,7 @@ class DiaryList extends Component {
     const { params } = this.props.navigation.state;
     return (
       <Navigation 
-        leftIcon={require('../../resouce/images/icon_back_arrow.png')}
+        leftIcon={require('../../resource/images/icon_back_arrow.png')}
         leftClick={this._back}
         text={params.name}
       />

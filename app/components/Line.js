@@ -3,16 +3,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Platform,
   StyleSheet,
   View,
-  Text,
-  FlatList,
-  TouchableHighlight,
-  Image,
 } from 'react-native';
 
-import {   themeColor } from '../../common/theme';
+import { themeColor } from '../common/theme';
+
+const BackDefaultColor = themeColor.BackDefaultColor;
 
 class Line extends Component {
 
@@ -34,14 +31,14 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: 'rgba(233,233,233,1)',
-    height: 1,
+    height: 0.5,
   }
 });
 
 Line.defaultProps = {
   left: 0,
   right: 0,
-  color: themeColor.LineColor
+  color: BackDefaultColor
 }
 
 Line.propTypes = {

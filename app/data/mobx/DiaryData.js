@@ -31,5 +31,6 @@ export default class DiaryData extends ListData {
       arr[diary.year][diary.month][diary.day].push(diary);
     }
     this.data = arr;
+    this.isRefreshing = false;
   }
 }

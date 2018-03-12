@@ -85,7 +85,7 @@ class Swipe extends Component {
       >
         <Image 
           style={styles.buttonImg} 
-          source={require('../resouce/images/edit_add.png')}
+          source={require('../resource/images/edit_add.png')}
         />
       </TouchableOpacity>
     )
@@ -99,7 +99,7 @@ class Swipe extends Component {
       >
         <Image 
           style={styles.buttonImg} 
-          source={require('../resouce/images/edit_remove.png')}
+          source={require('../resource/images/edit_remove.png')}
         />
       </TouchableOpacity>
     )

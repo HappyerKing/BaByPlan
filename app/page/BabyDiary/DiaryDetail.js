@@ -30,11 +30,11 @@ class DiaryDetail extends PureComponent {
       modalVisible: true,
       yOffset: new Animated.Value(0),
       icon: [
-        require('../../resouce/images/weather_sunny_small.png'),
-        require('../../resouce/images/weather_cloud_small.png'),
-        require('../../resouce/images/weather_rain_small.png'),
-        require('../../resouce/images/weather_snow_small.png'),
-        require('../../resouce/images/weather_light_small.png')
+        require('../../resource/images/weather_sunny_small.png'),
+        require('../../resource/images/weather_cloud_small.png'),
+        require('../../resource/images/weather_rain_small.png'),
+        require('../../resource/images/weather_snow_small.png'),
+        require('../../resource/images/weather_light_small.png')
       ],
       diary: {
         name: '',
@@ -156,9 +156,9 @@ class DiaryDetail extends PureComponent {
             outputRange: ['rgba(255,255,255,0)', 'rgba(255,255,255,0)', 'rgba(255,255,255,1)']
           })
         }]}
-        leftIcon={require('../../resouce/images/icon_back_arrow.png')}
+        leftIcon={require('../../resource/images/icon_back_arrow.png')}
         leftClick={this._back}
-        rightIcon={require('../../resouce/images/icon_option_gray.png')}
+        rightIcon={require('../../resource/images/icon_option_gray.png')}
         rightClick={this._save}
       />
     )

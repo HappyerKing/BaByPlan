@@ -45,7 +45,7 @@ class Bottom extends PureComponent {
             <Image 
               style={styles.icon} 
               resizeMode={"contain"}
-              source={require('../../resouce/images/icon_pencil.png')}
+              source={require('../../resource/images/icon_pencil.png')}
             />
           }
         />
@@ -64,7 +64,7 @@ class Bottom extends PureComponent {
           <Image 
             style={styles.icon} 
             resizeMode={"contain"}
-            source={this.props.isDetail == false ? require('../../resouce/images/icon_calendar.png') : require('../../resouce/images/icon_turn_back.png')}
+            source={this.props.isDetail == false ? require('../../resource/images/icon_calendar.png') : require('../../resource/images/icon_turn_back.png')}
           />
         }
       />

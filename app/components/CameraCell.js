@@ -18,7 +18,7 @@ class CameraCell extends Component {
       <TouchableOpacity activeOpacity={1} onPress={this.props.onPress}>
         <View style={styles.container}>
           <Image
-            source={require("../resouce/images/photo.png")}
+            source={require("../resource/images/photo.png")}
             resizeMode={"contain"}
             style={styles.icon}
           />

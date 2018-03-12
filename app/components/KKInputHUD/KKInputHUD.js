@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import YearCell from './YearCell';
 import WeatherCell from './WeatherCell';
-import Line from '../Line/Line';
+import Line from '../Line';
 import {DateManager,Device} from '../../common';
 import { window,themeColor } from '../../common/theme';
 
@@ -37,11 +37,11 @@ class KKInputHUD extends PureComponent {
       opacity: new Animated.Value(0),
       currentIndex: -1,
       icon: [
-        require('../../resouce/images/weather_sunny_big.png'),
-        require('../../resouce/images/weather_cloud_big.png'),
-        require('../../resouce/images/weather_rain_big.png'),
-        require('../../resouce/images/weather_snow_big.png'),
-        require('../../resouce/images/weather_light_big.png')
+        require('../../resource/images/weather_sunny_big.png'),
+        require('../../resource/images/weather_cloud_big.png'),
+        require('../../resource/images/weather_rain_big.png'),
+        require('../../resource/images/weather_snow_big.png'),
+        require('../../resource/images/weather_light_big.png')
       ]
     }
   }

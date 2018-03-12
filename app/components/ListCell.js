@@ -17,11 +17,11 @@ class ListCell extends Component {
     super(props);  
     this.state = {  
       icon: [
-        require('../resouce/images/weather_sunny_small.png'),
-        require('../resouce/images/weather_cloud_small.png'),
-        require('../resouce/images/weather_rain_small.png'),
-        require('../resouce/images/weather_snow_small.png'),
-        require('../resouce/images/weather_light_small.png')
+        require('../resource/images/weather_sunny_small.png'),
+        require('../resource/images/weather_cloud_small.png'),
+        require('../resource/images/weather_rain_small.png'),
+        require('../resource/images/weather_snow_small.png'),
+        require('../resource/images/weather_light_small.png')
       ],
     };  
   }  
@@ -37,11 +37,11 @@ class ListCell extends Component {
     } else {
       return (
         <View style={styles.content}>
-          <Image style={styles.contentT} source={require('../resouce/images/diary_top.png')}/>
+          <Image style={styles.contentT} source={require('../resource/images/diary_top.png')}/>
           <View style={styles.contentC}>
             <Text numberOfLines={3} style={styles.contentText}>{this.props.item.content}</Text>
           </View>
-          <Image style={styles.contentB} source={require('../resouce/images/diary_down.png')}/>
+          <Image style={styles.contentB} source={require('../resource/images/diary_down.png')}/>
         </View>
       )
     }

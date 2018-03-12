@@ -60,4 +60,18 @@ export default class RealmManager {
     })
   }
 
+  // 查成长
+  static loadGrowth(filtered) {
+    if (realmObject != undefined) {
+      let persons = realmObject.objects('Growth');
+      if (filtered != null) {
+        let person = persons.filtered(filtered);
+        return person;
+      }
+      return persons;
+    } else {
+      return [];
+    }
+  }
+
 };
