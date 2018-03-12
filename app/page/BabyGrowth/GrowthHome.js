@@ -146,14 +146,9 @@ class GrowthHome extends Component {
   picker() {
     return <ThirdPicker ref={"picker"} onPickerConfirm={this._onPickerClick} />;
   }
-  render() {
-    return (
-      <View style={styles.container}>
-        {this.nav()}
-        {!this.growthData.isRefreshing ? this.header() : null}
-        {!this.growthData.isRefreshing  ? this.table() : null}
-        {!this.growthData.isRefreshing  ? this.picker() : null}
-        {<ActionButton buttonColor="rgba(231,76,60,1)">
+  add(){
+    return(
+      <ActionButton buttonColor="rgba(231,76,60,1)">
           <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
             <Icon name="android-create" style={styles.actionButtonIcon} />
           </ActionButton.Item>
@@ -163,7 +158,17 @@ class GrowthHome extends Component {
           <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
             <Icon name="android-done-all" style={styles.actionButtonIcon} />
           </ActionButton.Item>
-        </ActionButton>}
+        </ActionButton>
+    );
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        {this.nav()}
+        {!this.growthData.isRefreshing ? this.header() : null}
+        {!this.growthData.isRefreshing  ? this.table() : null}
+        {!this.growthData.isRefreshing  ? this.picker() : null}
+        {!this.growthData.isRefreshing  ? this.add() : null}
       </View>
     );
   }
@@ -213,6 +218,11 @@ const styles = StyleSheet.create({
     height: 12,
     marginLeft: 2,
     marginBottom: 2
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   }
 });
 
