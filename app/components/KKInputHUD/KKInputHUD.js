@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import YearCell from './YearCell';
 import WeatherCell from './WeatherCell';
+import CommonCell from './CommonCell';
 import Line from '../Line';
 import {DateManager,Device} from '../../common';
 import { window,themeColor } from '../../common/theme';
@@ -20,6 +21,7 @@ export const HUD = {
   DATE: 2000,
   WEATHER: 500,
   COLOR: 0,
+  DISCHARGE:10,
 };
 
 const ScreenWidth =window.width;
@@ -105,23 +107,35 @@ class KKInputHUD extends PureComponent {
         arr.push({key: i, weather: weather[i], isSelect: isSelect})
       }
     }
+    else if(this.props.type == HUD.DISCHARGE){
+      let discharge = ["干燥","有便便","尿湿"];
+      discharge.forEach((value,index)=>{
+        let  isSelect = this.state.currentIndex != -1?(index == this.state.currentIndex):(index == 0);
+        arr.push({key: index, data: value, isSelect: isSelect})
+      });
+    }
     return arr;
   }
 
   //==================== 点击 ====================//
   _onCellClick=(item)=>{
-    if (this.props.type == HUD.DATE) {
-      this.hide(()=>{
-        this.state.currentIndex = item.key;
-        this.props.onPress(item);
-      });
-    } 
-    else if (this.props.type == HUD.WEATHER) {
-      this.hide(()=>{
-        this.state.currentIndex = item.key;
-        this.props.onPress(item);
-      });
-    }
+    this.hide(()=>{
+      this.state.currentIndex = item.key;
+      this.props.onPress(item);
+    });
+
+    // if (this.props.type == HUD.DATE) {
+    //   this.hide(()=>{
+    //     this.state.currentIndex = item.key;
+    //     this.props.onPress(item);
+    //   });
+    // } 
+    // else if (this.props.type == HUD.WEATHER) {
+    //   this.hide(()=>{
+    //     this.state.currentIndex = item.key;
+    //     this.props.onPress(item);
+    //   });
+    // }
   }
 
   //==================== 控件 ====================//
@@ -132,6 +146,8 @@ class KKInputHUD extends PureComponent {
       return "选择天气"
     } else if (this.props.type == HUD.COLOR) {
       return "选择颜色"
+    }else if (this.props.type == HUD.DISCHARGE) {
+      return "选择状态"
     }
   }
   bj() {
@@ -197,9 +213,9 @@ class KKInputHUD extends PureComponent {
           onPress={this._onCellClick}
         />
       )
-    } else if (this.props.type == HUD.COLOR) {
+    } else {
       return (
-        <Text>COLOR</Text>
+        <CommonCell  item={item} onPress={this._onCellClick}/>
       )
     }
   }

@@ -10,6 +10,13 @@ import com.wix.interactable.Interactable;
 import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.reactlibrary.RNImgToBase64Package;
+import io.realm.react.RealmReactPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.beefe.picker.PickerViewPackage;
+import com.wix.interactable.Interactable;
+import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import com.reactlibrary.RNImgToBase64Package;
 import com.beefe.picker.PickerViewPackage;
 import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
 import io.realm.react.RealmReactPackage;
@@ -47,6 +54,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RealmReactPackage(),
+            new VectorIconsPackage(),
+            new PickerViewPackage(),
+            new Interactable(),
+            new ImageToBase64Package(),
+            new PickerPackage(),
+            new RNImgToBase64Package(),
             new RealmReactPackage(),
             new VectorIconsPackage(),
             new PickerViewPackage(),

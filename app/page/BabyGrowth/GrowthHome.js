@@ -78,6 +78,13 @@ class GrowthHome extends Component {
     //   }
     // })
   };
+
+  _addPress(name,type){
+    this.props.navigation.navigate('GrowthAdd',{
+      name,
+      type,
+    });
+  }
   nav() {
     return (
       <Navigation
@@ -149,14 +156,14 @@ class GrowthHome extends Component {
   add(){
     return(
       <ActionButton buttonColor="rgba(231,76,60,1)">
-          <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
-            <Icon name="android-create" style={styles.actionButtonIcon} />
+          <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={this._addPress.bind(this,'排泄',1)}>
+            <Icon name="ios-add" style={styles.actionButtonIcon} />
           </ActionButton.Item>
           <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
-            <Icon name="android-notifications-none" style={styles.actionButtonIcon} />
+            <Icon name="ios-add" style={styles.actionButtonIcon} />
           </ActionButton.Item>
           <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
-            <Icon name="android-done-all" style={styles.actionButtonIcon} />
+            <Icon name="ios-add" style={styles.actionButtonIcon} />
           </ActionButton.Item>
         </ActionButton>
     );

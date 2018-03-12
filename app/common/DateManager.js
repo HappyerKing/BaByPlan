@@ -58,6 +58,17 @@ export default class DateManager {
         var date = new Date();
         return date.getDate();
     }
+
+    /** 获取小时 */
+    static getHour() {
+        var date = new Date();
+        return date.getHours();
+    }
+    /** 获取分钟 */
+    static getMinute() {
+        var date = new Date();
+        return date.getMinutes();
+    }
     /** 获取星期几 */
     static getWeekday(y, m, d) {
       if (y == null) {

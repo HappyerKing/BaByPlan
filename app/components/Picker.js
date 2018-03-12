@@ -120,7 +120,7 @@ class ThirdPicker extends Component {
   }
   _onPickerConfirm=(data)=>{
     if (this.state.index == 0) {
-
+      this.props.onPickerConfirm(data[0]+':'+data[1], data,this.state.index);
     }
     else if (this.state.index == 1) {
       var year = parseInt(data[0]);
@@ -132,7 +132,7 @@ class ThirdPicker extends Component {
       var month = parseInt(data[1]);
       var day = parseInt(data[2]);
       var str = DateManager.getRemarkWithDate({year: year, month: month, day: day}, DATE_ENUM.DAY);
-      this.props.onPickerConfirm(str, data);
+      this.props.onPickerConfirm(str, data,this.state.index);
     }
     else if (this.state.index == 3) {
       var year = parseInt(data[0]);
