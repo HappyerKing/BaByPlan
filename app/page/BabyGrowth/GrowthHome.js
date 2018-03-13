@@ -156,13 +156,13 @@ class GrowthHome extends Component {
   add(){
     return(
       <ActionButton buttonColor="rgba(231,76,60,1)">
-          <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={this._addPress.bind(this,'排泄',1)}>
+          <ActionButton.Item buttonColor='#9b59b6' title="排泄" onPress={this._addPress.bind(this,'排泄',1)}>
             <Icon name="ios-add" style={styles.actionButtonIcon} />
           </ActionButton.Item>
           <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
             <Icon name="ios-add" style={styles.actionButtonIcon} />
           </ActionButton.Item>
-          <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
+          <ActionButton.Item buttonColor='#1abc9c' title="更多" onPress={() => {this.props.navigation.navigate('GrowthCategory')}}>
             <Icon name="ios-add" style={styles.actionButtonIcon} />
           </ActionButton.Item>
         </ActionButton>

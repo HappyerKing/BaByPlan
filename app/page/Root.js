@@ -9,7 +9,7 @@ import { StackNavigator } from "react-navigation";
 import { userStore } from "../data/mobx";
 import { MyHome } from "./My";
 import { DiaryEdit, DiaryPhoto, DiaryDetail, DiaryList } from "./BabyDiary";
-import { GrowthHome,GrowthAdd } from "./BabyGrowth";
+import { GrowthHome, GrowthAdd, GrowthCategory } from "./BabyGrowth";
 import Login from "./Login";
 import Main from "./Main";
 
@@ -21,7 +21,8 @@ const Route = StackNavigator(
     DiaryPhoto: { screen: DiaryPhoto },
     DiaryDetail: { screen: DiaryDetail },
     DiaryList: { screen: DiaryList },
-    GrowthAdd:{screen:GrowthAdd},
+    GrowthAdd: { screen: GrowthAdd },
+    GrowthCategory: { screen: GrowthCategory },
   },
   {
     initialRouteName: userStore.user != null ? "Main" : "Login", // 默认显示界面

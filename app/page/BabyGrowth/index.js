@@ -1,4 +1,5 @@
-import GrowthHome from './GrowthHome';
-import GrowthAdd from './GrowthAdd';
+import GrowthHome from "./GrowthHome";
+import GrowthAdd from "./GrowthAdd";
+import GrowthCategory from "./GrowthCategory";
 
-export {GrowthHome,GrowthAdd};
+export { GrowthHome, GrowthAdd, GrowthCategory };
